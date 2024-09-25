@@ -1,16 +1,118 @@
 @charset "UTF-8";
 
+/* SPのヘッダー */
+.header_inner {
+  position: relative;
+  height: 60px;
+  width: 100%;
+  background-color: snow;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 20;
+}
+
+.head_SP {
+  background-image: url(../images//head_SP.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 4rem;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+
 .header {
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   height: 60px;
+  z-index: 30;
+  background: white;
 }
 
-.header_inner {
-  position: relative;
+.nav_anime {
+  padding: 0 10px;
+  /* 1つ目の影を隠す */
+  overflow: hidden;
+  color: transparent;
+  /* テキスト本体は透明にする */
+  font-size: 60px;
+  /*
+   影の設定
+   1つ目：Y方向の位置にマイナスに設定してテキスト本体の上に配置、ぼかしなし
+   2つ目：位置はテキスト本体と同じ、ぼかしなし
+  */
+  text-shadow: 0 -1.5em 0 #9e911e, 0 0 0 #9e911e;
+  background: linear-gradient(to bottom, #9e911e 50%, transparent 50%) 0 100%;
+  background-size: 100% 200%;
+  transition: text-shadow 0.3s, background-position 0.3s;
 }
+
+.nav_anime:hover {
+  /* 2つの影の位置を上方向に1.5emずつずらす */
+  text-shadow: 0 0 0 snow, 0 1.5em 0 #9e911e;
+
+  /* 背景の位置を動かす */
+  background-position: 0 0;
+  color: snow;
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 100vh;
+  opacity: 0.85;
+}
+
+.btn,
+a.btn {
+  color: #fff;
+  background-color: #9e911e;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.btn:hover,
+a.btn:hover {
+  color: #fff;
+  background: snow;
+  color: #9e911e;
+  border: 1px solid #9e911e;
+  background-color: snow;
+}
+
+
+
+解説
+/* SPは非表示 */
+
+
+
+
+
 
 .logo {
   position: absolute;
@@ -24,9 +126,6 @@
   font-weight: 600;
 }
 
-.main {
-  margin-top: 60px;
-}
 
 .video {
   text-align: center;
@@ -105,8 +204,19 @@ section {
   text-align: center;
 }
 
+header {
+  margin: 0 0 0 0;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 0 0 0;
+}
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 751px) {
+
+  .head_SP {
+    display: none;
+  }
+
   html {
     font-size: 16px;
     font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro",
@@ -122,9 +232,6 @@ section {
     padding: 0 0 0 0;
   }
 
-  head {
-    display: none;
-  }
 
   * {
     box-sizing: border-box;
@@ -135,26 +242,12 @@ section {
     height: auto;
   }
 
-  header {
-    margin: 0 0 0 0;
-    width: 100%;
-    height: 3rem;
-    justify-content: space-between;
-    padding: 0 0 0 0;
+
+
+  .header_inner {
+    display: none;
   }
 
-  .head_SP {
-    visibility: hidden;
-  }
-
-  .head_BM {
-    visibility: hidden;
-  }
-
-  .nav_right {
-    visibility: visible;
-    /*  transform: translate(15%, -100%);*/
-  }
 
   .aboutus {
     height: 763px;
@@ -199,7 +292,7 @@ section {
   }
 
   /* セクション */
-  .mainimg {
+  .main_img {
     position: relative;
 
     height: 505px;
@@ -251,6 +344,10 @@ section {
     width: 45%;
   }
 
+  .column:hover {
+    opacity: 0.5;
+  }
+
   .CV_midashi {
     font-size: 24px;
     margin-bottom: 20px;
@@ -300,6 +397,10 @@ section {
     text-align: right;
   }
 
+  .recruit_img:hover {
+    opacity: 0.5;
+  }
+
   /* Contact Section */
   .contact {
     margin: 0 0 0 0;
@@ -307,8 +408,12 @@ section {
     text-align: center;
   }
 
-  .maillimg {
+  .mail_img {
     max-width: 100%;
+  }
+
+  .mail_img:hover {
+    opacity: 0.5;
   }
 
   .contactmain {
@@ -389,46 +494,36 @@ section {
   body {
     margin: 0;
   }
-}
 
-/* PC表示 */
-.head_main {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 
-ul.gnav-navi-1 {
-  margin-right: 0;
-  padding-right: 1rem;
+  /* PC表示 */
+  .head_main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  ul.gnav-navi-1 {
+    margin-right: 0;
+    padding-right: 1rem;
+  }
 }
 
 @media screen and (max-width: 750px) {
-  .head_SP {
-    visibility: visible;
-    background-image: url(../images//head_SP.png);
-    background-size: cover;
-    height: 2rem;
+
+
+  .header {
+    display: none;
   }
 
-  .head_main {
-    margin-top: 3rem;
-    height: 4rem;
-  }
-
-  .head_BM {
-    visibility: visible;
-  }
 
   .hamburger {
-    margin-top: 3rem;
+    margin-top: 5rem;
   }
 
-  .nav_right {
-    visibility: hidden;
-  }
 
-  .mainimg {
+
+  .main_img {
     background-image: url(../images/mainimg_sp.png);
     height: 800px;
     background-repeat: no-repeat;
@@ -530,6 +625,17 @@ ul.gnav-navi-1 {
 
   }
 
+  .btn {
+    text-align: center;
+  }
+
+  .contents,
+  .recruit,
+  .contact,
+  .products {
+    text-align: center;
+  }
+
   .footer02 {
     margin-left: 0.5rem;
   }
@@ -621,7 +727,7 @@ ul.gnav-navi-1 {
     z-index: 100;
     background-color: #9e911e;
     opacity: 0;
-    visibility: hidden;
+    display: none;
     transition: all 0.6s;
     cursor: pointer;
   }
@@ -633,7 +739,7 @@ ul.gnav-navi-1 {
 
   .nav-open .black_bg {
     opacity: 0.8;
-    visibility: visible;
+
   }
 
   .nav-open .hamburger_border_top {
