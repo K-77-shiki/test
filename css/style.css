@@ -14,6 +14,12 @@
   z-index: 20;
 }
 
+.contents,
+.products,
+.recruit,
+.contact {}
+
+
 .head_SP {
   background-image: url(../images//head_SP.png);
   background-size: cover;
@@ -106,6 +112,7 @@ a.btn:hover {
 
 
 
+
 解説
 /* SPは非表示 */
 
@@ -142,7 +149,7 @@ section {
 }
 
 .midashi {
-  font-size: 32px;
+  font-size: 64px;
   color: #9e911e;
   text-align: center;
 }
@@ -153,24 +160,33 @@ section {
 }
 
 .midashi_botom {
-  font-size: 16px;
+  font-size: 42px;
   margin-top: 10px;
   color: #9e911e;
   text-align: center;
 }
 
-.main_text {
-  text-align: center;
-  transform: translate(0, 150%);
 
+
+.main_text {
   border-radius: 15px;
   background-color: snow;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 40px;
-  width: 25%;
-  margin-left: 65%;
+  font-size: 86px;
+  width: 60%;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+
+.main_img {
+  height: 1100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
 }
 
 .midashi,
@@ -178,6 +194,10 @@ section {
 .midashi_FN {
   text-decoration: underline;
   text-decoration-color: #9e911e;
+}
+
+.midashi_FN {
+  margin-right: 3rem;
 }
 
 /* About Us Section */
@@ -192,11 +212,12 @@ section {
 
 .abmain {
   background-color: snow;
-  margin-top: 20%;
+  margin-top: 5%;
   padding: 0 0 0 0;
   font-size: 18px;
   max-width: 600px;
   color: black;
+  opacity: 0.7;
 }
 
 .copyright {
@@ -211,7 +232,7 @@ header {
   padding: 0 0 0 0;
 }
 
-@media screen and (min-width: 751px) {
+@media screen and (min-width: 750px) {
 
   .head_SP {
     display: none;
@@ -243,6 +264,16 @@ header {
   }
 
 
+  .midashi_NZ {
+    font-size: 60px;
+    margin-top: 2rem;
+  }
+
+  .card {
+    font-size: 42px;
+    margin-top: 2rem;
+  }
+
 
   .header_inner {
     display: none;
@@ -250,16 +281,34 @@ header {
 
 
   .aboutus {
-    height: 763px;
+    height: 1200px;
   }
 
   .abmain {
     margin-left: 3rem;
+    font-size: 45px;
+    max-width: 1200px;
+    width: 1500px;
+    height: 600px;
   }
 
   .bottan {
     margin-top: 1rem;
     margin-bottom: 2rem;
+  }
+
+  .footer_nv {
+    font-size: 24px;
+    display: flex;
+    text-align: left;
+  }
+
+  .main_img,
+  .contents,
+  .aboutus,
+  .products,
+  .contact {
+    border-bottom: solid 1px #9e911e;
   }
 
   /*  グローバルナビ  */
@@ -294,30 +343,33 @@ header {
   /* セクション */
   .main_img {
     position: relative;
-
-    height: 505px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     background-image: url(../images/mainimage.png);
     background-repeat: no-repeat;
     background-size: cover;
+    width: 100%;
   }
 
   /* Content Section */
   .contents {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
-    background-color: #f5f5f5;
-    padding: 0 0 0 0;
     position: relative;
-    background-size: cover;
+    background-size: 100%;
     background-image: url(../images/columnbg.png);
     background-repeat: no-repeat;
     text-align: center;
+    min-height: 750px;
   }
 
+
   .flexbox {
-    transform: translate(28%, 0);
+    display: flex;
+    align-items: center;
   }
 
   .flexbox:nth-child(even) {
@@ -329,7 +381,7 @@ header {
   }
 
   .flex-item {
-    width: 43%;
+    width: 500px;
     justify-content: flex-start;
     padding: 0 0 0 0;
   }
@@ -349,24 +401,20 @@ header {
   }
 
   .CV_midashi {
-    font-size: 24px;
+    font-size: 64px;
     margin-bottom: 20px;
   }
+
 
   /* Products Section */
   .products {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
-    height: 786px;
+    height: 1200px;
     background-image: url("../images/productsbg.png");
     background-size: cover;
 
     text-align: center;
-  }
-
-  .column {
-    text-align: center;
-    padding: 0 0 0 0;
   }
 
 
@@ -374,12 +422,52 @@ header {
   .recruit {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
-    height: 888px;
+    height: 1200px;
   }
 
-  .recruit_list li {
-    border-bottom: 1px solid #9e911e;
-    margin-left: 10%;
+  .recruit_list a {
+    color: #9e911e;
+    /* 文字色 */
+    display: inline-block;
+    /* これがないとリンク範囲が全幅になる */
+    font-size: 42px;
+    /* 文字サイズ */
+    position: relative;
+    /* 相対位置指定 */
+    text-decoration: none;
+    /* デフォルトのテキストの下線を消す */
+    margin-left: 100px;
+  }
+
+  /* 下線のスタイル */
+  .recruit_list ul li a::after {
+    background-color: #9e911e;
+    /* 下線の色 */
+    bottom: -4px;
+    /* 要素の下端からの距離 */
+    content: "";
+    /* 要素に内容を追加 */
+    height: 2px;
+    /* 下線の高さ */
+    left: 0;
+    /* 要素の左端からの距離 */
+    position: absolute;
+    /* 絶対位置指定 */
+    transform: scale(0, 1);
+    /* 下線を横方向に0倍、縦方向に1倍に変形（非表示） */
+    transform-origin: left top;
+    /* 変形の原点を左上に指定 */
+    transition: transform .3s;
+    /* 変形をアニメーション化 */
+    width: 125%;
+    /* 要素の幅 */
+  }
+
+  /* リンクにホバーした際の下線の表示 */
+  .recruit_list ul li a:hover::after {
+    transform: scale(1, 1);
+
+    /* 下線を横方向に1倍、縦方向に1倍に変形（表示） */
   }
 
   .recruit_list {
@@ -428,16 +516,22 @@ header {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     height: 253px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
   }
 
+  .menu_FN {
+    margin-right: 3rem;
+  }
 
 
   /* Footer */
   .footer02 {
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
     color: #9e911e;
-    text-align: center;
+
     padding: 0 0 0 0;
   }
 
@@ -457,6 +551,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-left: 2rem;
   }
 
   .footer02 .menu li {
@@ -525,20 +620,21 @@ header {
 
   .main_img {
     background-image: url(../images/mainimg_sp.png);
-    height: 800px;
+    height: 750px;
+    max-width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
   }
 
   .main_text {
-    transform: translate(-68%, 260%);
-    border-radius: 0;
+    display: flex;
+    border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 38px;
-    width: 70%;
-    margin-left: 65%;
+    font-size: 42px;
+    width: 85%;
+    height: 20%;
   }
 
   .abmain {
@@ -549,6 +645,10 @@ header {
   .CV_midashi {
     text-align: center;
     font-size: 34px;
+  }
+
+  .flex-item {
+    margin: 20px;
   }
 
   .field {
@@ -574,6 +674,22 @@ header {
 
   .midashi_NZ {
     font-size: 24px;
+  }
+
+  .video {
+
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .video h3 iframe {
+    position: absolute;
+    top: 0;
+    left: 5%;
+    width: 90%;
+    height: 90%;
   }
 
   .recruit_list {
@@ -608,11 +724,6 @@ header {
     text-align: center;
   }
 
-  .column {
-    width: 330px;
-    transform: translate(10%, 10%);
-
-  }
 
   .box1 {
     margin-bottom: 3rem;
@@ -620,9 +731,10 @@ header {
 
   .contents,
   .products,
+  .aboutus,
+  .recruit,
   .contact {
-    border-bottom: #9e911e solid 1px;
-
+    margin-top: 60px;
   }
 
   .btn {
