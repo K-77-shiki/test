@@ -14,11 +14,6 @@
   z-index: 20;
 }
 
-.contents,
-.products,
-.recruit,
-.contact {}
-
 
 .head_SP {
   background-image: url(../images//head_SP.png);
@@ -204,6 +199,7 @@ section {
 .aboutus {
   margin: 0 0 0 0;
   width: 100%;
+  height: 600px;
   background-image: url("../images/aboutusbg.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -217,7 +213,7 @@ section {
   font-size: 18px;
   max-width: 600px;
   color: black;
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 .copyright {
@@ -232,18 +228,19 @@ header {
   padding: 0 0 0 0;
 }
 
+html {
+  font-size: 16px;
+  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro",
+    "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  background-color: snow;
+}
+
 @media screen and (min-width: 750px) {
 
   .head_SP {
     display: none;
   }
 
-  html {
-    font-size: 16px;
-    font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro",
-      "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
-    background-color: snow;
-  }
 
   html,
   body {
@@ -286,15 +283,16 @@ header {
 
   .abmain {
     margin-left: 3rem;
-    font-size: 45px;
+    font-size: 40px;
     max-width: 1200px;
-    width: 1500px;
-    height: 600px;
+    width: 60%;
+    height: 60%;
+    opacity: 0.75;
   }
 
   .bottan {
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
   }
 
   .footer_nv {
@@ -430,14 +428,15 @@ header {
     /* 文字色 */
     display: inline-block;
     /* これがないとリンク範囲が全幅になる */
-    font-size: 42px;
+    font-size: 60px;
     /* 文字サイズ */
     position: relative;
     /* 相対位置指定 */
     text-decoration: none;
     /* デフォルトのテキストの下線を消す */
-    margin-left: 100px;
+    margin-left: 25%;
   }
+
 
   /* 下線のスタイル */
   .recruit_list ul li a::after {
@@ -471,7 +470,7 @@ header {
   }
 
   .recruit_list {
-    margin-top: 500px;
+    margin-top: 400px;
   }
 
   .saiyo {
@@ -632,14 +631,25 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 42px;
-    width: 85%;
+    font-size: 35px;
+    width: 70%;
     height: 20%;
   }
 
   .abmain {
     background-color: rgb(255 250 250/.5);
-    height: 400px;
+    height: 320px;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-top: 100px;
+  }
+
+  .aboutus {
+    height: 800px;
+  }
+
+  .midasshi_AB {
+    margin-bottom: 100px;
   }
 
   .CV_midashi {
