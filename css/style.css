@@ -196,13 +196,25 @@ section {
   margin-right: 3rem;
 }
 
+.contents {
+  background-size: cover;
+  background-image: url(../images/columnbg.png);
+  background-repeat: no-repeat;
+}
+
+.products {
+  background-image: url("../images/productsbg.png");
+  background-size: cover;
+}
+
+
 /* About Us Section */
 .aboutus {
   margin: 0 0 0 0;
   width: 100%;
   height: 600px;
   background-image: url("../images/aboutusbg.png");
-  background-size: cover;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 
@@ -302,13 +314,13 @@ html {
     text-align: left;
   }
 
-  .main_img,
   .contents,
-  .aboutus,
   .products,
   .contact {
     border-bottom: solid 1px #9e911e;
   }
+
+
 
   /*  グローバルナビ  */
 
@@ -349,7 +361,7 @@ html {
     padding: 0 0 0 0;
     background-image: url(../images/mainimage.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
     width: 100%;
   }
 
@@ -358,11 +370,8 @@ html {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     position: relative;
-    background-size: 100%;
-    background-image: url(../images/columnbg.png);
-    background-repeat: no-repeat;
+
     text-align: center;
-    min-height: 750px;
   }
 
 
@@ -410,8 +419,6 @@ html {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     height: 1200px;
-    background-image: url("../images/productsbg.png");
-    background-size: cover;
 
     text-align: center;
   }
@@ -623,7 +630,7 @@ html {
     height: 750px;
     max-width: 100%;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
   }
 
   .main_text {
